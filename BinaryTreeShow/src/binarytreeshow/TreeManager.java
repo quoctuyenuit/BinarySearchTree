@@ -52,14 +52,14 @@ public class TreeManager {
         for (int i : array) {
             this.addNode(i);
         }
-        this.updateLocation(false);
+        this.updateLocation();
     }
     
     public void buildTreeFromList(ArrayList<Integer> list){
         for (int i : list) {
             this.addNode(i);
         }
-        this.updateLocation(false);
+        this.updateLocation();
     }
     
     //==========================================================================
@@ -186,7 +186,7 @@ public class TreeManager {
             @Override
             public void run() {
                 balanceTheTree(root, null, true);
-                updateLocation(true);
+                updateLocation();
                 repaint();
             }
         });
@@ -415,17 +415,17 @@ public class TreeManager {
     }
     //==========================================================================
     
-    public void updateLocation(boolean animation){
+    public void updateLocation(){
         this.root.setLevel(1);
-        this.updateLocation(root, animation);
+        this.updateLocation(root);
     }
     
-    private void updateLocation(Node node, boolean animation){
+    private void updateLocation(Node node){
         if(node == null) return;
         
-        node.updateChildrenLocation(animation);
-        this.updateLocation(node.getLeft(), animation);
-        this.updateLocation(node.getRight(), animation);
+        node.updateChildrenLocation();
+        this.updateLocation(node.getLeft());
+        this.updateLocation(node.getRight());
     }
     //==========================================================================
     

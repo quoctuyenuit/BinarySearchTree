@@ -87,7 +87,7 @@ public class Node extends JComponent implements MouseListener{
         this.left = node;
     }
     
-    public void updateChildrenLocation(boolean animation){
+    public void updateChildrenLocation(){
         Node leftNode = this.left;
         Node rightNode = this.right;
         
@@ -95,20 +95,12 @@ public class Node extends JComponent implements MouseListener{
         
         if(leftNode != null){
             int x = this.getLocation().x - 300/level;
-//            if(animation){
-//                NodeAnimation.Instance().setStart(leftNode);
-//                NodeAnimation.Instance().start(new Point(x, y));
-//            }
             leftNode.setLocation(x, y);
             leftNode.setLevel(level + 1);
         }
         
         if(rightNode != null){
             int x = this.getLocation().x + 300/level;
-//            if(animation){
-//                NodeAnimation.Instance().setStart(leftNode);
-//                NodeAnimation.Instance().start(new Point(x, y));
-//            }
             rightNode.setLocation(x, y);
             rightNode.setLevel(level + 1);
         }
@@ -150,7 +142,7 @@ public class Node extends JComponent implements MouseListener{
         if(n != 0) return;
         
         TreeManager.Instance().deleteNode(key);
-        TreeManager.Instance().updateLocation(false);
+        TreeManager.Instance().updateLocation();
         TreeManager.Instance().repaint();
     }
 

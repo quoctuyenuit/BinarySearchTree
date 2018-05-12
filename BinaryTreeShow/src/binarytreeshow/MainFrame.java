@@ -6,34 +6,20 @@
 package binarytreeshow;
 
 import java.awt.BorderLayout;
-import java.awt.Button;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.GridLayout;
-import java.awt.ScrollPane;
 import java.awt.event.ActionEvent;
-import java.awt.event.KeyEvent;
-import java.util.Random;
-import javafx.animation.Animation;
-import javax.swing.Box;
-import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
 import javax.swing.GroupLayout;
-import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
-import javax.swing.JRadioButtonMenuItem;
 import javax.swing.JScrollPane;
-import javax.swing.JTextField;
-import javax.swing.SpringLayout;
 import javax.swing.border.EmptyBorder;
-import javax.xml.ws.handler.MessageContext;
 
 /**
  *
@@ -60,7 +46,6 @@ public class MainFrame {
             public void paint(Graphics g) {
                 super.paint(g); //To change body of generated methods, choose Tools | Templates.
                 TreeManager.Instance().paintLink(g);
-                NodeAnimation.Instance().paint(g);
             }
           
         };
